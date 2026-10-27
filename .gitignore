@@ -1,0 +1,8 @@
+
+/vendor
+vendor.zip
+
+# Fichiers de configuration contenant des identifiants
+# (copier les fichiers *.example.php et les remplir)
+/includes/config.php
+/includes/email_config.php

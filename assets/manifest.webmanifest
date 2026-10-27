@@ -1,0 +1,23 @@
+{
+  "name": "FAI Gestion",
+  "short_name": "FAI Gestion",
+  "description": "Application de gestion de stock, ventes, abonnements",
+  "start_url": "./app/dashboard.php",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "lang": "fr-FR",
+  "icons": [
+    {
+      "src": "./assets/img/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./assets/img/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

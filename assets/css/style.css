@@ -1,0 +1,296 @@
+/* Compact hero/public page spacing */
+.public-home-page h1 { margin-bottom: .5rem; }
+.public-home-page .lead { margin-bottom: .75rem; }
+.public-home-page .row.align-items-center { row-gap: .5rem; }
+body { 
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; 
+}
+html, body { height: 100%; }
+/* Hide vertical scrollbar on public home page */
+body.no-scroll { overflow-y: hidden; }
+/* Make layout columns stretch equally; sidebar fills full column height */
+#sidebar { 
+  min-height: 100%;
+  height: 100%;
+}
+.container-fluid > .row { align-items: stretch; min-height: calc(100vh - 56px); }
+.card, .btn { 
+  border-radius: .5rem; 
+}
+
+/* Brand colors */
+:root {
+  --brand-white: #ffffff;
+  --brand-black: #0b0b0b;
+  --brand-red: #d10024;
+  --brand-red-600: #b3001f;
+  --brand-red-100: #ffe5ea;
+  --brand-blue: #2563eb; /* indigo-600 */
+  --brand-blue-600: #1d4ed8;
+  /* Softer app background to avoid eye strain */
+  --brand-bg: #eef2f7; /* soft cool gray */
+  --surface-soft: #f9fafb; /* near-white for panels */
+  /* Layout sizes */
+  --topbar-h: 56px;
+  --footer-h: 56px;
+  --footer-h-mobile: 68px;
+}
+
+/* Base */
+body { color: var(--brand-black); background-color: var(--brand-bg); }
+.app-body { background: var(--brand-bg); display: flex; min-height: 100vh; flex-direction: column; }
+/* Make main grow to push footer to bottom when content is short */
+.app-body > main { flex: 1 0 auto; }
+.public-home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--topbar-h) - var(--footer-h)); /* fit above footer */
+  justify-content: center; /* center block vertically within available height */
+}
+.public-home-page img.img-fluid { max-height: 16dvh; object-fit: contain; }
+.public-home-page .card-body { padding: .95rem 1rem; }
+.public-home-page .alert { padding: .25rem .5rem; margin-top: 0; }
+/* Slightly larger card texts without increasing overall layout height */
+.public-home-page .card .fw-bold { font-size: 1.2rem; }
+.public-home-page .card .text-muted, .public-home-page .card .countup { font-size: 1.14rem; }
+.public-home-page .card .countup { font-weight: 600; }
+.public-home-page .card i.bi { font-size: 1.35rem !important; }
+/* Tighten vertical gaps between primary sections */
+.public-home-page > .row:first-child { margin-bottom: .25rem !important; }
+.public-home-page > .row + .row { margin-top: 0 !important; }
+/* Remove extra bottom padding on main for public page to avoid tiny scrollbar */
+main.public-home-page { padding-bottom: 0 !important; }
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center between topbar and footer without scrolling */
+  min-height: calc(100vh - var(--topbar-h));
+  padding: .75rem 0; /* a bit more breathing room */
+}
+.login-page h1 { margin-bottom: .5rem; }
+.login-page .form-label { margin-bottom: .25rem; }
+.login-page .form-control { padding-top: .375rem; padding-bottom: .375rem; }
+.login-page .card { margin: 0 auto; }
+.push-bottom { margin-top: auto; }
+.text-brand { color: var(--brand-red) !important; }
+
+/* Buttons */
+.btn, a.btn, .nav-link { transition: all .2s ease-in-out; }
+.btn-primary {
+  background-color: var(--brand-red);
+  border-color: var(--brand-red);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--brand-red-600);
+  border-color: var(--brand-red-600);
+}
+.btn-info { background-color: var(--brand-blue); border-color: var(--brand-blue); }
+.btn-info:hover, .btn-info:focus { background-color: var(--brand-blue-600); border-color: var(--brand-blue-600); }
+.btn-outline-danger { /* align with brand red */
+  color: var(--brand-red);
+  border-color: var(--brand-red);
+}
+.btn-outline-danger:hover {
+  background-color: var(--brand-red);
+  color: #fff;
+}
+.btn:hover, a.btn:hover { transform: translateY(-1px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15); }
+.btn:active { transform: translateY(0); }
+.btn-outline-secondary { color: #222; border-color: #ddd; }
+.btn-outline-secondary:hover { background:#f5f5f5; border-color: #cfcfcf; }
+
+/* Cards */
+.card { transition: transform .2s ease-in-out, box-shadow .2s ease-in-out; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 .6rem 1.2rem rgba(0,0,0,.14); }
+
+/* Sidebar */
+#sidebar { background: #ffffff; backdrop-filter: none; }
+#sidebar .list-group-item {
+  border: 0; border-left: 3px solid transparent; color: #222;
+}
+#sidebar .list-group-item:hover { background: #fafafa; }
+#sidebar .list-group-item.active,
+#sidebar .list-group-item:focus {
+  background: var(--brand-red-100);
+  color: var(--brand-black);
+  border-left-color: var(--brand-red);
+}
+
+/* Table header */
+.table thead.table-light th { background-color: #f7f7f7; color: #111; }
+
+/* Badges for statuses */
+.badge.bg-success { background-color: #16a34a !important; }
+.badge.bg-warning { background-color: #facc15 !important; }
+.badge.bg-secondary { background-color: #6c757d !important; }
+
+/* Links */
+a { color: var(--brand-red); }
+a:hover { color: var(--brand-red-600); }
+
+/* Alerts professional */
+.alert-pro { border: 1px solid #eee; border-left: 4px solid var(--brand-red); background: var(--surface-soft); box-shadow: 0 .25rem .75rem rgba(0,0,0,.06); }
+.alert-pro.alert-success { border-left-color: #16a34a; }
+.alert-pro.alert-warning { border-left-color: #f59e0b; }
+.alert-pro.alert-danger { border-left-color: var(--brand-red); }
+
+/* Period filters and pagination harmonization */
+input[type="date"].form-control.border-primary {
+  border-color: var(--brand-blue) !important;
+}
+input[type="date"].form-control.border-primary:focus {
+  box-shadow: 0 0 0 .15rem rgba(37,99,235,.25);
+}
+.badge.bg-light.text-dark.border {
+  font-weight: 600;
+}
+.pagination .page-link {
+  color: var(--brand-red);
+  border-color: #e5e7eb;
+}
+.pagination .page-link:hover {
+  color: var(--brand-red-600);
+  background-color: #f9fafb;
+}
+.pagination .page-item.disabled .page-link {
+  color: #9ca3af;
+  pointer-events: none;
+  background-color: #fff;
+}
+
+/* KPI cards (dashboard) */
+.kpi-card {
+  border-left: 6px solid transparent;
+  background-image: linear-gradient(180deg, #ffffff, #fafafa);
+}
+.kpi-card .display-6 { font-weight: 700; }
+.kpi-products { border-left-color: #2563eb; }
+.kpi-products .fw-bold { color: #1d4ed8; }
+.kpi-clients { border-left-color: #0ea5e9; }
+.kpi-clients .fw-bold { color: #0284c7; }
+.kpi-ventes { border-left-color: var(--brand-red); }
+.kpi-ventes .fw-bold { color: var(--brand-red-600); }
+.kpi-abos { border-left-color: #16a34a; }
+.kpi-abos .fw-bold { color: #15803d; }
+
+/* Active nav highlighting by section */
+#sidebar .list-group-item.active {
+  color: #111827;
+  font-weight: 600;
+  border-left: 4px solid currentColor;
+  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0));
+}
+#sidebar .nav-dashboard.active { color: #0ea5e9; }
+#sidebar .nav-produits.active { color: #2563eb; }
+#sidebar .nav-stock.active { color: #7c3aed; }
+#sidebar .nav-clients.active { color: #0ea5e9; }
+#sidebar .nav-abonnements.active { color: #16a34a; }
+#sidebar .nav-ventes.active { color: var(--brand-red-600); }
+#sidebar .nav-paiements.active { color: #0d9488; }
+#sidebar .nav-fournisseurs.active { color: #f59e0b; }
+
+/* Topbar current section pill */
+.top-section-pill {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.6;
+  border: 1px solid currentColor;
+  color: #e5e7eb; /* default on dark bg */
+}
+.pill-dashboard { color: #0ea5e9; background: rgba(14,165,233,.12); }
+.pill-produits { color: #60a5fa; background: rgba(37,99,235,.12); }
+.pill-stock { color: #a78bfa; background: rgba(124,58,237,.12); }
+.pill-clients { color: #38bdf8; background: rgba(14,165,233,.12); }
+.pill-abonnements { color: #34d399; background: rgba(22,163,74,.12); }
+.pill-ventes { color: var(--brand-red-300, #fca5a5); background: rgba(220,38,38,.12); }
+.pill-paiements { color: #5eead4; background: rgba(13,148,136,.12); }
+.pill-fournisseurs { color: #fbbf24; background: rgba(245,158,11,.12); }
+
+/* Fixed flash container (toast-like) */
+.flash-container {
+  position: fixed;
+  top: 64px; /* just below navbar (56px) */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1080; /* above navbar and content */
+  width: auto;
+  max-width: calc(100vw - 32px);
+  pointer-events: none; /* clicks pass through except on alerts */
+  text-align: center;
+}
+.flash-container .alert { pointer-events: auto; }
+
+/* Compact alert (single-line height similar to heading) */
+.alert-sm {
+  padding: 0 .6rem; /* reduce vertical padding */
+  height: 36px; /* approx one text line height */
+  display: inline-flex;
+  align-items: center;
+  font-size: .95rem;
+  line-height: 1; /* rely on explicit height */
+  border-radius: .35rem;
+}
+
+/* Keep alerts out of sidebar and limit length */
+.flash-container .alert {
+  display: inline-flex;
+  align-items: center; /* center vertically with close button */
+  gap: .5rem;
+  max-width: 500px; /* slightly narrower */
+  width: max-content;
+  white-space: nowrap; /* keep message on one line */
+}
+.flash-container .alert .btn-close {
+  position: static; /* let flex layout place it */
+  float: none; /* override bootstrap default if any */
+  margin: 0 0 0 .25rem;
+  width: .9rem; height: .9rem; /* visually balanced inside 36px height */
+}
+
+@media (min-width: 992px) { /* lg breakpoint: sidebar uses col-lg-2 (~16.6667%) */
+  /* Keep centered; widen a bit on desktop but remain within viewport */
+  .flash-container { left: 50%; transform: translateX(-50%); }
+  .flash-container .alert { max-width: min(560px, calc(100vw - 32px)); }
+}
+
+/* Slightly taller topbar on small screens */
+@media (max-width: 575.98px) {
+  :root { --topbar-h: 64px; --footer-h: var(--footer-h-mobile); }
+  .login-page { padding-left: .5rem; padding-right: .5rem; }
+  .public-home-page { padding-top: .5rem !important; padding-bottom: .5rem !important; padding-left: .5rem; padding-right: .5rem; }
+  .public-home-page img.img-fluid { max-height: 32dvh; object-fit: contain; }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .public-home-page img.img-fluid { max-height: 38dvh; object-fit: contain; }
+}
+
+/* Slightly reduce horizontal gutters on public hero row to save side space */
+.public-home-page .row { --bs-gutter-x: .75rem; }
+@media (max-width: 575.98px) {
+  .public-home-page .row { --bs-gutter-x: .5rem; }
+}
+
+/* Footer */
+.app-footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+  padding: 8px 0; /* slightly tighter to fit within --footer-h */
+}
+.app-footer .nav-link {
+  color: #6b7280 !important;
+}
+.app-footer .nav-link:hover {
+  color: #374151 !important;
+  text-decoration: underline;
+}
+
+/* Ensure footer spacing on short pages */
+main.container, main.container-fluid {
+  padding-bottom: 1rem;
+}
